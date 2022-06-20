@@ -1,0 +1,149 @@
+/* pages/route/route.wxss */
+.body {
+    background-color: rgba(242, 242, 242, 0.919);
+}
+
+.space_v {
+    padding: 4%;
+}
+
+.head_body {
+    /* text-align: center; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    width: 750rpx;
+}
+
+.head_img {
+    width: 750rpx;
+    height: 500rpx;
+    left: 0px;
+    top: 0px;
+}
+
+.wx-swiper-dots {
+    position: relative;
+    right: 550rpx;
+    left: unset !important;
+    top: 460rpx;
+}
+
+swiper .wx-swiper-dot {
+    height: 10rpx;
+    width: 10rpx;
+    margin-right: 0;
+}
+
+swiper .wx-swiper-dot-active {
+    width: 30rpx;
+    height: 10rpx;
+    border-radius: 5rpx;
+    background-color: rgb(191, 186, 186);
+}
+
+
+.head_title {
+    left: 50rpx;
+    top: 100rpx;
+    font-size: 50rpx;
+    color: rgb(255, 255, 255);
+    position: absolute;
+}
+
+/*
+    padding: 20rpx;
+    background-color: white;
+    border-radius: 30rpx;
+    border: 3rpx solid rgb(33, 173, 33);
+    margin: 20rpx;
+    box-shadow: 0px 3px 3px 2px gainsboro;
+     */
+.card_view {
+    width: 655rpx;
+    margin-top: -120rpx;
+    left: 30rpx;
+    padding: 20rpx;
+    background-color: white;
+    border: 2rpx gray;
+    border-radius: 15rpx;
+    position: absolute;
+    box-shadow: 0px 2px 2px 2px gainsboro;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.card_view .space {
+    height: 30rpx;
+    flex: 1;
+}
+
+.test {
+    width: 690rpx;
+    margin-left: 30rpx;
+    margin-top: 100rpx;
+    background-color: red;
+}
+
+.card_item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100rpx;
+    /* background-color: wheat; */
+}
+
+.card_img {
+    border-radius: 40rpx;
+}
+
+.card_text {
+    font-size: 25rpx;
+}
+
+.two_title {
+    display: flex;
+    align-items: center;
+    margin-top: 70rpx;
+    margin-left: 30rpx;
+}
+
+.two_title view {
+    font-size: 30rpx;
+}
+
+.rect_item {
+    height: 150rpx;
+    margin-left: 45rpx;
+    margin-top: 20rpx;
+}
+
+.rect_item .line_item {
+    width: 30rpx;
+    background-color: red;
+    border-top-left-radius: 20rpx;
+    border-bottom-left-radius: 20rpx;
+    height: 150rpx;
+    position: absolute;
+}
+
+.rect_item .rect_conent {
+    margin-left: 6rpx;
+    background-color: white;
+    border-radius: 20rpx;
+    height: 150rpx;
+    width: 615rpx;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.rect_item .rect_conent .right_icon {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    right: 10rpx;
+}

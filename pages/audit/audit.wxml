@@ -1,0 +1,125 @@
+<!-- pages/audit/audit.wxml -->
+<view>
+    <view class="line"></view>
+    <view class="linear bottom">
+        <view style="height:1rpx;width:75rpx"></view>
+        <view bindtap='unAudit' class="center" style="flex:1;color:{{selectTag==0?'#40bbf7':'black'}}">
+            未审批
+        </view>
+        <view style="height:50rpx;width:150rpx"></view>
+        <view bindtap='audit' class="center" style="flex:1;color:{{selectTag==1?'#40bbf7':'black'}}">
+            已审批
+        </view>
+        <view style="height:1rpx;width:75rpx"></view>
+    </view>
+    <view class="linear">
+        <view class="line" style="flex:1;background-color:{{selectTag==0?'#40bbf7':line_color}}"></view>
+        <view class="line" style="flex:1;background-color:{{selectTag==1?'#40bbf7':line_color}}"></view>
+    </view>
+    <scroll-view hidden="{{selectTag==0?false:true}}" style="height:{{height}}rpx;" scroll-y="{{true}}" refresher-enabled='true' bindrefresherrefresh='refresh' refresher-triggered="{{triggered}}">
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            <block wx:if="{{records.length==0}}">
+                <view class="hint_view center" hover-class="none" hover-stop-propagation="false">
+                    {{message}}
+                </view>
+            </block>
+            <block wx:for="{{records}}" wx:for-item="record" wx:key="key" wx:for-index="index">
+                <view>
+                    <view class="item_1">
+                        <view style="font-size:30rpx;margin-top:30rpx">{{index+1}}.原因：</view>
+                        <view class="linear" style="margin-top:15rpx;">
+                            <view style="text-indent:2em;">
+                                <view class="item_1_reason">
+                                    {{record.reason}}{{record.reason}}
+                                </view>
+                            </view>
+                            <view class="arrow_view" bindtap='arrowClick' data-index='{{index}}'>
+                                <image class="arrow_tag" style="transform:rotate({{record.isShow?90:0}}deg);" src="../../images/right_icon.svg" />
+                            </view>
+                        </view>
+                        <view style="font-size:25rpx;color:gray;margin-top:20rpx;text-align:right">
+                            {{record.date}}
+                        </view>
+                        <view hidden="{{!record.isShow}}">
+                            <block wx:for="{{record.peopleInfos}}" wx:key="id" wx:for-item="people" wx:for-index="cIndex">
+                                <view class="linear">
+                                    <view class="child_index">{{cIndex+1}}</view>
+                                    <view class="item_people">
+                                        <view class="line" style="width:{{750-(cIndex==0?0:1)*84}}rpx;margin-left:{{-115+(cIndex==0?0:1)*40}}rpx;margin-top:20rpx;margin-bottom:20rpx;background-color:{{line_color}}"></view>
+                                        <view>姓名：{{people.name}}</view>
+                                        <view>身份证：{{people.idcard}}</view>
+                                        <view>单位：{{people.unit}}</view>
+                                    </view>
+                                </view>
+                            </block>
+                        </view>
+                        <view style="width:750rpx;height:1rpx;background-color:{{line_color}};margin-top:20rpx;margin-bottom:15rpx;margin-left:-42rpx;"></view>
+                        <view class="linear">
+                            <view style="flex:1;height:10rpx"></view>
+                            <button class="btn" data-id='{{record.id}}' data-index='{{index}}' data-status='{{1}}' bindtap='auditRecord' style="width:150rpx;" loading="{{loading}}">
+                                审批通过
+                            </button>
+                            <view style="width:60rpx"></view>
+                            <button class="btn" data-id='{{record.id}}' data-index='{{index}}' data-status='{{2}}' bindtap='auditRecord' style="width:150rpx;" loading="{{loading}}">
+                                不通过
+                            </button>
+                        </view>
+                    </view>
+                    <view class="line_rect"></view>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+    <scroll-view hidden="{{selectTag==1?false:true}}" style="height:{{height}}rpx;" scroll-y="{{true}}" refresher-enabled='true' bindrefresherrefresh='auditRefresh' refresher-triggered="{{auditTriggered}}">
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            <block wx:if="{{hadRecords.length==0}}">
+                <view class="hint_view center" hover-class="none" hover-stop-propagation="false">
+                    {{hadMessage}}
+                </view>
+            </block>
+            <block wx:for="{{hadRecords}}" wx:for-item="record" wx:key="key" wx:for-index="index">
+                <view>
+                    <view class="item_1">
+                        <view class="linear" style="margin-top:30rpx">
+                            <view style="font-size:30rpx;">{{index+1}}.原因：</view>
+                            <view style="flex:1;height:10rpx"></view>
+                            <!-- 0申请进入，1同意申请进入，2不同意申请，3值班人跟随拍照补充完信息 -->
+                            <view class="btn_view center" data-id='{{record.id}}'>
+                                {{record.enterStatus==2?'不同意进入':(record.enterStatus==1?'已同意进入等待完善信息':'信息已完成')}}
+                            </view>
+                        </view>
+                        <view class="linear" style="margin-top: 15rpx;">
+                            <view style="text-indent:2em;">
+                                <view class="item_1_reason">
+                                    {{record.reason}}{{record.reason}}
+                                </view>
+                            </view>
+                            <view class="arrow_view" bindtap='arrowClick' data-index='{{index}}' style="padding:10rpx">
+                                <image class="arrow_tag" style="transform:rotate({{record.isShow?90:0}}deg);" src="../../images/right_icon.svg" />
+                            </view>
+                        </view>
+                        <view style="font-size:25rpx;color:gray;margin-top:20rpx;text-align:right">
+                            {{record.date}}
+                        </view>
+                        <view hidden="{{!record.isShow}}">
+                            <block wx:for="{{record.peopleInfos}}" wx:key="id" wx:for-item="people" wx:for-index="cIndex">
+                                <view class="linear">
+                                    <view class="child_index">{{cIndex+1}}</view>
+                                    <view class="item_people">
+                                        <view class="line" style="width:{{750-(cIndex==0?0:1)*84}}rpx;margin-left:{{-115+(cIndex==0?0:1)*40}}rpx;margin-top:20rpx;margin-bottom:20rpx;background-color:{{line_color}}"></view>
+                                        <view>姓名：{{people.name}}</view>
+                                        <view>身份证：{{people.idcard}}</view>
+                                        <view>单位：{{people.unit}}</view>
+                                    </view>
+                                </view>
+                            </block>
+                        </view>
+                        <!-- <view style="width:750rpx;height:1rpx;background-color:{{line_color}};margin-top:20rpx;margin-bottom:15rpx;margin-left:-42rpx;"></view> -->
+                        
+                    </view>
+                    <view class="line_rect"></view>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>

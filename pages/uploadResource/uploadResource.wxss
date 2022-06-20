@@ -1,0 +1,73 @@
+/* pages/uploadResource/uploadResource.wxss */
+.space_gray {
+    background-color: rgb(251, 249, 252);
+    height: 25rpx;
+    width: 100%;
+}
+
+.title_2 {
+    width: 150rpx;
+    color: #000;
+    font-weight: bold;
+    margin-left: 20rpx;
+    line-height: 80rpx;
+    font-size: 35rpx;
+}
+
+.gridview-item {
+    box-sizing: border-box;
+    height: 80rpx;
+    width: 140rpx;
+    margin-left: 30rpx;
+}
+
+.add_view {
+    box-sizing: border-box;
+    font-size: 50rpx;
+    color: gray;
+    background-color: rgb(251, 249, 252);
+    border: 3rpx dashed rgb(179, 176, 176);
+    width: 140rpx;
+    height: 80rpx;
+    margin-left: 30rpx;
+    margin-top: 15rpx;
+}
+
+.line {
+    background-color: rgb(251, 249, 252);
+    height: 2rpx;
+}
+
+.linear {
+    display: flex;
+    align-items: flex-start;
+}
+
+.textarea_title {
+    padding-top: 26rpx;
+    padding-bottom: 20rpx;
+    font-size: 30rpx;
+    /* margin-left: 20rpx; */
+    /* line-height: 80rpx; */
+}
+
+input {
+    padding-top: 10rpx;
+    padding-bottom: 20rpx;
+}
+
+.upload {
+    width: 80%;
+    border-radius: 80rpx;
+    height: 100rpx;
+    font-weight: 500;
+    color: #000;
+    background-color: rgb(255, 220 , 8);
+    /* padding: 0rpx; */
+}
+.remark_view{
+    width: 605rpx;
+    margin-left:60rpx;
+    padding: 5rpx;
+    border: 3rpx solid rgb(251, 249, 252);
+}

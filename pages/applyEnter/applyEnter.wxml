@@ -1,0 +1,81 @@
+<!-- pages/applyEnter/applyEnter.wxml -->
+<scroll-view class="content1" scroll-y="{{true}}">
+    <view>
+        <view class="linear">
+            <view class="line_v"></view>
+            <text class="title_1">申请原因:</text>
+        </view>
+        <view style="height:30rpx"></view>
+        <view class="text" hover-class="none" hover-stop-propagation="false">
+            <textarea class="text_reason" maxlength="-1" auto-height="{{true}}" bindinput="reasonInput" type="text" placeholder="请输入原因"></textarea>
+        </view>
+    </view>
+    <view style="height:30rpx"></view>
+    <view class="linear">
+        <view class="line_v"></view>
+        <text class="title_1">人员列表({{peopeles.length}})：</text>
+        <view style="flex:1"></view>
+        <button class="btn_add" style="width:150rpx" type="primary" bindtap="appendPeople">添加人员</button>
+        <view style="width:42rpx"></view>
+    </view>
+    <view class="center hint_view" wx:if="{{peoples.length==0}}">
+        <view>还未添加人员</view>
+    </view>
+    <view>
+        <block wx:for="{{peoples}}" wx:key="key">
+            <view>
+                <view class="card_view">
+                    <view class="center">
+                        <text style="color:black;font-size:35rpx">第{{index+1}}个</text>
+                    </view>
+                    <view style="height:15rpx"></view>
+                    <view class="line_space"></view>
+                    <view style="height:15rpx"></view>
+                    <view class="view_text">姓名：{{item.name}}</view>
+                    <view style="height:15rpx"></view>
+                    <view class="view_text">身份证：{{item.idcard}}</view>
+                    <view style="height:15rpx"></view>
+                    <view class="view_text">单位：{{item.unit}}</view>
+                    <view style="height:15rpx"></view>
+                </view>
+                <image bindtap='deleteItem' data-index="{{index}}" style="width:50rpx;height:50rpx" class="delete_item" src="../../images/delete_icon.png" />
+            </view>
+        </block>
+    </view>
+    <view class="space_v"></view>
+    <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+        <!-- 如果想点击弹窗外不隐藏，取消bindtap点击事件即可 -->
+        <view class="zan-dialog__mask" bindtap="toggleDialog" />
+        <view class="zan-dialog__container">
+            <form bindsubmit="fillPeopleInfoFrom" bindreset="cancleDialog">
+                <view style="padding-top: 60rpx;">
+                    <view class="head ">
+                        <input class="dialog_input" name='name' maxlength="10" placeholder='请输入姓名' type="text" placeholder-style="font-size:35rpx"/>
+                    </view>
+                    <view class="space_v"></view>
+                    <view class="head ">
+                        <input class="dialog_input" maxlength="18" name='idcard' placeholder='请输入身份证' type='idcard' placeholder-style="font-size:35rpx"/>
+                    </view>
+                    <view class="space_v"></view>
+                    <view class="head ">
+                        <input class="dialog_input" name='unit' placeholder='请输入单位' type='text' placeholder-style="font-size:35rpx"/>
+                    </view>
+                </view>
+                <view class="space_v"></view>
+                <view class="line_view">
+                    <button form-type="reset" class="dialog_btm" style="width:45%" catchtap='toggleDialog'>
+                        取消
+                    </button>
+                    <button form-type="submit" class="dialog_btm" style="width:45%" catchtap='toggleDialog'>
+                        确定
+                    </button>
+                </view>
+                <view style="height:60rpx;"></view>
+            </form>
+        </view>
+    </view>
+    <button class="btn" type="primary" loading="{{loadTag}}" disabled="{{btnDisabled}}" bindtap="applyEnter">
+        提交申请
+    </button>
+    <view style="height:30rpx"></view>
+</scroll-view>

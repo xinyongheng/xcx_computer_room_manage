@@ -1,0 +1,102 @@
+/* pages/audit/audit.wxss */
+.bf {
+    background-color: rebeccapurple;
+    height: 1rpx;
+    color: red;
+}
+
+.item_1 {
+    width: 666rpx;
+    margin-left: 42rpx;
+}
+
+.item_people {
+    padding-left: 30rpx;
+    font-size: 28rpx;
+}
+
+.line {
+    background-color: gray;
+}
+
+.item_1_reason {
+    width: 600rpx;
+    font-size: 30rpx;
+    /* background-color: tan; */
+}
+
+.btn {
+    padding: 0rpx;
+    width: 200rpx;
+    color: white;
+    background-color: rgb(30, 182, 30);
+    padding-top: 5rpx;
+    padding-bottom: 5rpx;
+    border: 2rpx solid green;
+    min-width: none;
+    font-size: 26rpx;
+    font-weight: normal;
+}
+
+.btn_view {
+    width: max-content;
+    color: black;
+    /* background-color: rgb(30, 182, 30); */
+    /* border: 2rpx solid green; */
+    font-size: 26rpx;
+    font-weight: normal;
+    padding-top: 5rpx;
+    padding-bottom: 5rpx;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+}
+
+.hint_view {
+    background-color: rgb(228, 228, 228);
+    padding: 20rpx;
+    font-size: 35rpx;
+}
+
+.line_rect {
+    background-color: rgb(228, 228, 228);
+    height: 30rpx;
+    width: 100%;
+    margin-top: 20rpx;
+}
+
+.arrow_view {
+    padding: 10rpx;
+    position: absolute;
+    right: 32rpx;
+    margin-top: 15rpx;
+}
+
+.arrow_tag {
+    width: 40rpx;
+    height: 40rpx;
+    /* top: ; */
+    /* 设置元素旋转的基本点 */
+    transform-origin: 50% 50%;
+    /* 30是元素旋转的度数 */
+    /* transform: rotate(90deg); */
+}
+
+.child_index {
+    /* background-color: red; */
+    width: 35rpx;
+    height: 35rpx;
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: center;
+    /* left: 42rpx; */
+    top: 20rpx;
+    position: relative;
+    border: 1rpx solid rgb(30, 182, 30);
+    border-radius: 30rpx;
+    font-size: 25rpx;
+}
+
+.bottom {
+    width: 100%;
+    height: 100rpx;
+}

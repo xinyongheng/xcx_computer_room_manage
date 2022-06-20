@@ -1,0 +1,161 @@
+<!-- pages/dailyInspections/dailyInspections.wxml -->
+<view>
+    <view class="head_bg"></view>
+    <view class="content" style="height:{{cHeight}}rpx">
+        <view class="c_head">
+            <view class="c_title">
+                <view bindtap="fillPeoples" class="title" style="color:{{btSelect==1?'rgb(255, 36, 37)':'rgb(0,0,0)'}}">
+                    人员信息
+                </view>
+                <view class="{{btSelect==1?'title_line':'title_line_space'}}"></view>
+            </view>
+            <view class="c_title">
+                <view bindtap="fillInfo" class="title" style="color:{{btSelect==3?'rgb(255, 36, 37)':'rgb(0,0,0)'}}">
+                    信息填写
+                </view>
+                <view class="{{btSelect==3?'title_line':'title_line_space'}}"></view>
+            </view>
+            <view class="c_title">
+                <view bindtap="fillFile" class="title" style="color:{{btSelect==2?'rgb(255, 36, 37)':'rgb(0,0,0)'}}">
+                    添加图片
+                </view>
+                <view class="{{btSelect==2?'title_line':'title_line_space'}}"></view>
+            </view>
+        </view>
+        <view style="padding-left:10rpx;padding-right:10rpx;">
+            <view class="info" hidden="{{btSelect==1?false:true}}">
+                <scroll-view scroll-y="{{true}}">
+                    <block wx:for="{{peoples}}" wx:key="index">
+                        <view class="">
+                            <view class="left_item">
+                                <view class="linear">
+                                    <view class="line"></view>
+                                    <view class="num">{{index+1}}</view>
+                                    <view class="line"></view>
+                                </view>
+                                <view class="linear">
+                                    <view class="key">姓名：</view>
+                                    <input data-index="{{index}}" bindinput='nameInput' placeholder="请输入姓名" />
+                                </view>
+                                <view class="linear">
+                                    <view class="key">身份证：</view>
+                                    <input data-index="{{index}}" type="idcard" bindinput='idcardInput' placeholder="请输入身份证" />
+                                </view>
+                                <view class="linear">
+                                    <view class="key">单位：</view>
+                                    <input data-index="{{index}}" bindinput='unitInput' placeholder="请输入单位名称" />
+                                </view>
+                            </view>
+                            <image bindtap='deleteItem' data-index="{{index}}" style="width:50rpx;height:50rpx" class="delete_item" src="../../images/delete_icon.png" />
+                        </view>
+                    </block>
+                    <view class="line" style="margin-top:20rpx;margin-bottom:20rpx"></view>
+                    <button class="people_bt" style="width: 120rpx;" bindtap='addPeople'>
+                        添加人员
+                    </button>
+                </scroll-view>
+            </view>
+            <view class="info" hidden="{{btSelect==3?false:true}}">
+                <scroll-view scroll-y="{{true}}" style="padding-left:10rpx">
+                    <view class='linear'>
+                        <view>室内温度：</view>
+                        <input style="width:{{width1}}px" type="number" maxlength="4" data-type='{{1}}' bindinput='infoInput' placeholder="请输入室内温度" />
+                        °C
+                    </view>
+                    <view class="space"></view>
+                    <view class='linear'>
+                        <view>室内湿度：</view>
+                        <input data-type='{{2}}' type="number" bindinput='infoInput' maxlength="4" placeholder="请输入室内湿度" />
+                    </view>
+                    <view class="space"></view>
+                    <view class='linear'>
+                        <view>室外温度：</view>
+                        <input style="width:{{width2}}px" type="number" data-type='{{3}}' maxlength="4" bindinput='infoInput' placeholder="请输入室外温度" />
+                        °C
+                    </view>
+                    <view class="space"></view>
+                    <view class='linear'>
+                        <view>室外湿度：</view>
+                        <input data-type='{{4}}' type="number" bindinput='infoInput' maxlength="4" placeholder="请输入室外湿度" />
+                    </view>
+                    <view class="space"></view>
+                    <view>备注：</view>
+                    <view class="space"></view>
+                    <textarea data-type='{{5}}' bindinput='infoInput' placeholder="备注（非必填）" maxlength="-1" auto-height="{{false}}"></textarea>
+                </scroll-view>
+            </view>
+            <view class="file" hidden="{{btSelect==2?false:true}}">
+                <scroll-view scroll-y="{{true}}">
+                    <view class="linear">
+                        <view>值班人员：</view>
+                        <view style="display: flex;flex: 1;"></view>
+                    </view>
+                    <view class="gridview">
+                        <block wx:for="{{dutyPersonImg}}" wx:key="key">
+                            <view class="gridview-item center">
+                                <image style="width:100%;height:100%" mode="aspectFit" data-type='{{5}}' data-src="{{item}}" data-index="{{index}}" bindtap='imageClick' src="{{item}}" bindlongpress='deleteImg' />
+                            </view>
+                        </block>
+                        <view data-type='{{5}}' bindtap='addFile' class="addTag gridview-item">
+                            +
+                        </view>
+                    </view>
+                    <!-- <view class="clearfix"></view> -->
+                    <view>中心机房巡查记录表：</view>
+                    <view class="gridview">
+                        <view wx:if="{{dbRoomInspectionsTableImg.length>1}}" class="gridview-item center">
+                            <image style="width:100%;height:100%" mode="aspectFit" data-type='{{1}}' data-index="{{0}}" bindtap='imageClick' src="{{dbRoomInspectionsTableImg}}" bindlongpress='deleteImg' />
+                        </view>
+                        <view wx:elif="{{dbRoomInspectionsTableImg.length<=1}}" data-type='{{1}}' bindtap='addFile' class="addTag gridview-item">
+                            +
+                        </view>
+                    </view>
+                    <view>数据中心机房日常情况登记表：</view>
+                    <view class="gridview">
+                        <view wx:if="{{dbRoomDailyCheckInTableImg.length>1}}" class="gridview-item center">
+                            <image style="width:100%;height:100%" mode="aspectFit" data-type='{{2}}' data-index="{{0}}" bindtap='imageClick' src="{{dbRoomDailyCheckInTableImg}}" bindlongpress='deleteImg' />
+                        </view>
+                        <view wx:elif="{{dbRoomDailyCheckInTableImg.length<=1}}" data-type='{{2}}' bindtap='addFile' class="addTag gridview-item">
+                            +
+                        </view>
+                    </view>
+                    <view>室内空调面板数字(温度湿度)：</view>
+                    <view class="gridview">
+                        <view wx:if="{{indoorsTemperatureHumidityImg.length>1}}" class="gridview-item center">
+                            <image style="width:100%;height:100%" mode="aspectFit" data-type='{{3}}' data-index="{{0}}" bindtap='imageClick' src="{{indoorsTemperatureHumidityImg}}" bindlongpress='deleteImg' />
+                        </view>
+                        <view wx:elif="{{indoorsTemperatureHumidityImg.length<=1}}" data-type='{{3}}' bindtap='addFile' class="addTag gridview-item">
+                            +
+                        </view>
+                    </view>
+                    <view>室外空调面板数字(温度湿度)：</view>
+                    <view class="gridview">
+                        <view wx:if="{{outsideTemperatureHumidityImg.length>1}}" class="gridview-item center">
+                            <image style="width:100%;height:100%" mode="aspectFit" data-type='{{4}}' data-index="{{0}}" bindtap='imageClick' src="{{outsideTemperatureHumidityImg}}" bindlongpress='deleteImg' />
+                        </view>
+                        <view wx:elif="{{outsideTemperatureHumidityImg.length<=1}}" data-type='{{4}}' bindtap='addFile' class="addTag gridview-item">
+                            +
+                        </view>
+                    </view>
+                    <view>补充备注：</view>
+                    <view class="gridview">
+                        <block wx:for="{{remarkImg}}" wx:key="key">
+                            <view class="gridview-item center">
+                                <image style="width:100%;height:100%" mode="aspectFit" data-type='{{6}}' data-index="{{index}}" bindtap='imageClick' src="{{item}}" bindlongpress='deleteImg' />
+                            </view>
+                        </block>
+                        <view data-type='{{6}}' bindtap='addFile' class="addTag gridview-item">
+                            +
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+    <button class='submit_btn' loading="{{loading}}" disabled="{{disabled}}" bindtap="submit">
+        确认提交
+    </button>
+</view>
+<view class="inputLenght" style="font-size:30rpx;background-color:red;width:max-content;margin-left:-750rpx">
+    {{content}}
+</view>

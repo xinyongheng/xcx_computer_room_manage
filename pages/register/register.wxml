@@ -1,0 +1,76 @@
+<!-- pages/register/register.wxml -->
+<!-- <text>pages/register/register.wxml</text> -->
+<view>
+    <view style="height:80rpx"></view>
+    <form report-submit="false" bindsubmit="toRegister">
+        <view class="rect_item">
+            <image src="../../images/login_head_icon.jpg" style="width:50rpx;height:50rpx;margin-right:20rpx" />
+            <input value="{{nickname}}" type="text" name="nickname" placeholder="请输入姓名" />
+        </view>
+        <view style="width:750rpx;height:30rpx;"></view>
+         <view class="rect_item">
+            <image src="{{phone_src}}" style="width:50rpx;height:50rpx;margin-right:20rpx" />
+            <input value="{{account}}" type="number" name="account" placeholder="请输入手机号" />
+        </view>
+        <view style="width:750rpx;height:30rpx;"></view>
+        <view class="rect_item">
+            <image src="../../images/login_ps_icon.png" style="width:50rpx;height:50rpx;margin-right:20rpx" />
+            <input value="{{password}}" type="text" name="password" placeholder="请输入密码" placeholder-class="input-placeholder" password="{{true}}" />
+        </view>
+        <view style="width:750rpx;height:30rpx;"></view>
+        <view style="margin-left: 130rpx;">
+            <view class="linear">
+                <view class="line_v" style="margin-left:0rpx;margin-right:10rpx"></view>
+                <view class="title">类型：</view>
+            </view>
+            <view style="width:750rpx;height:10rpx;"></view>
+            <view>
+                <radio-group bindchange="checkboxChange" class="linear">
+                    <view wx:for="{{typeItems}}" wx:key="key" class="linear">
+                        <radio id="{{item.type}}" value="{{item.text}}" checked="{{item.checked}}" />
+                        <label for="{{item.type}}">
+                            <text>{{item.text}}</text>
+                        </label>
+                        <view style="width:30rpx"></view>
+                    </view>
+                </radio-group>
+            </view>
+            <view style="width:750rpx;height:30rpx;"></view>
+            <view wx:if="{{type!==2}}">
+                <view class="linear">
+                    <view class="line_v" style="margin-left:0rpx;margin-right:10rpx"></view>
+                    <view class="title">单位：</view>
+                </view>
+                <view style="width:750rpx;height:10rpx;"></view>
+                <radio-group class="linear" bindchange="checkboxChange1">
+                    <view wx:for="{{companyTypes}}" wx:for-item="item" wx:key="key" class="linear">
+                        <label>
+                            <radio value="{{item.text}}" />
+                            <text>{{item.text}}</text>
+                        </label>
+                        <view style="width:30rpx"></view>
+                    </view>
+                </radio-group>
+                <view style="width:750rpx;height:10rpx;"></view>
+                <view class="linear">
+                    <view style="font-size:30rpx">名称：</view>
+                    <input disabled="{{type==0}}" placeholder="{{(type==0?'数据局':'请输入单位名称')}}" value="{{companyName}}" name="unit"/>
+                </view>
+                <view style="width:750rpx;height:15rpx;"></view>
+                <view>
+                    <view class="linear">
+                        <view class="line_v" style="margin-left:0rpx;margin-right:10rpx"></view>
+                        <view class="title">邀请码：</view>
+                    </view>
+                    <!-- <view style="font-size:30rpx">邀请码：</view> -->
+                    <input style="margin-left:20rpx" placeholder="请输入邀请码" name="code"/>
+                </view>
+            </view>
+        </view>
+        <view style="width:750rpx;height:45rpx;"></view>
+        <!-- </view> -->
+        <button class="login_bt" form-type="submit" type="primary" loading="{{loading}}" style="width:490rpx">
+            注册
+        </button>
+    </form>
+</view>

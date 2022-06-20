@@ -1,0 +1,37 @@
+<!-- pages/userinfo/userinfo.wxml -->
+<view>
+    <view class="linear">
+        <view class="line_v"></view>
+        <view style="width:20rpx"></view>
+        <view class="title">类型：</view>
+    </view>
+    <view style="margin-left:62rpx;margin-top:20rpx">{{typeString}}</view>
+    <view style="height:20rpx"></view>
+    <view class="linear">
+        <view class="line_v"></view>
+        <view style="width:20rpx"></view>
+        <view class="title">单位：</view>
+    </view>
+    <view style="margin-left:62rpx;margin-top:20rpx">{{company}}</view>
+    <view style="height:20rpx"></view>
+    <view class="linear">
+        <view class="line_v"></view>
+        <view style="width:20rpx"></view>
+        <view class="title">账号：</view>
+    </view>
+    <view style="height:20rpx"></view>
+    <text class="text_content" style="width:600rpx;margin-left:62rpx" selectable="{{true}}">{{account}}</text>
+    <view style="height:20rpx"></view>
+    <view class="linear">
+        <view class="line_v"></view>
+        <view style="width:20rpx"></view>
+        <view class="title">昵称：</view>
+    </view>
+    <view style="height:20rpx"></view>
+    <text class="text_content" style="width:600rpx;margin-left:62rpx" selectable="{{true}}">{{nickname}}</text>
+    <!-- <view>{{openid}}</view> -->
+    <view style="height:200rpx"></view>
+    <button class="btn" type="primary" bindtap="unlogin">
+        退出登录
+    </button>
+</view>

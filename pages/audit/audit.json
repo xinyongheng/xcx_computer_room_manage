@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "navigationStyle": "default",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#40bbf7",
+  "navigationBarTitleText": "审批进入",
+  "navigationBarTextStyle": "white"
+  
+}

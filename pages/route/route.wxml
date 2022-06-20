@@ -1,0 +1,68 @@
+<!-- pages/route/route.wxml -->
+<!-- 功能路由 -->
+<view class="body" style="height:{{height}}">
+    <view class="head_body">
+        <view class="head_img" style="height:{{headHeight}}">
+            <swiper style="height:{{headHeight}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" easing-function="easeInOutCubic">
+                <block wx:for="{{banners}}" wx:key="*this">
+                    <swiper-item>
+                        <image mode="aspectFill" style="width:100%;height:{{headHeight}}" src="{{item}}" />
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class="head_title">机房管理</view>
+        <view class="card_view">
+            <view class="space"></view>
+            <view class="card_item" bindtap="duty">
+                <image class="card_img" src="../../images/computer_room.jpg" style="width:80rpx;height:80rpx" mode="scaleToFill" />
+                <view class="card_text">值班巡查</view>
+            </view>
+            <view class="space"></view>
+            <view class="card_item" bindtap="apply">
+                <image class="card_img" src="../../images/computer.png" style="width:80rpx;height:80rpx" mode="scaleToFill" />
+                <view class="card_text">申请登记</view>
+            </view>
+            <view class="space"></view>
+            <view class="card_item" bindtap="audit">
+                <image class="card_img" src="../../images/earth.png" style="width:80rpx;height:80rpx" mode="scaleToFill" />
+                <view class="card_text">审批进入</view>
+            </view>
+            <view class="space"></view>
+        </view>
+    </view>
+    <view class="two_title">
+        <image src="../../images/menu_icon.png" mode="scaleToFill" style="width:50rpx;height:50rpx;margin-right:5rpx" />
+        <view>常用业务</view>
+    </view>
+    <view>
+        <view class="rect_item" bindtap="uploadResource">
+            <view class="line_item" style="background-color:blue"></view>
+            <view class="rect_conent">
+                <view>云资源上传</view>
+                <image class="right_icon" src="../../images/right_icon.svg" />
+            </view>
+        </view>
+        <view class="rect_item" bindtap="loadLocation">
+            <view class="line_item" style="background-color:red"></view>
+            <view class="rect_conent">
+                <view>问题记录</view>
+                <image class="right_icon" src="../../images/right_icon.svg" />
+            </view>
+        </view>
+        <view class="rect_item" bindtap="loadLocation">
+            <view class="line_item" style="background-color:green"></view>
+            <view class="rect_conent">
+                <view>测试位置</view>
+                <image class="right_icon" src="../../images/right_icon.svg" />
+            </view>
+        </view>
+        <view class="rect_item" bindtap="selfInfo">
+            <view class="line_item" style="background-color:aqua"></view>
+            <view class="rect_conent">
+                <view>个人信息</view>
+                <image class="right_icon" src="../../images/right_icon.svg" />
+            </view>
+        </view>
+    </view>
+</view>

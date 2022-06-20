@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "navigationStyle": "default",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#ff2524",
+  "navigationBarTitleText": "巡查值班",
+  "navigationBarTextStyle": "white"
+}

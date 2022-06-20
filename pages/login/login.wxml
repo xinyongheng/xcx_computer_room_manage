@@ -1,0 +1,34 @@
+<!-- pages/login/login.wxml -->
+<view>
+    <!-- 213 379 -->
+    <image src="../../images/login_head_bg.jpg" mode="scaleToFill" style="width:750rpx;height:518rpx" />
+    <view class="back_view" bindtap="back" hidden="true">
+        <image src="../../images/arrow_back1.png" style="width:48rpx;height:78rpx;" />
+    </view>
+    <view>
+        <view style="width:750rpx;height:150rpx;"></view>
+        <!-- <view class="rect_item"> 
+            <image src="../../images/login_head_icon.jpg" style="width:50rpx;height:50rpx;margin-right:20rpx" />
+            <input type="nickname" class="weui-input" placeholder="请输入昵称"/>
+        </view>
+        <view style="width:750rpx;height:30rpx;"></view> -->
+        <form report-submit="false" bindsubmit="toLogin">
+            <view class="rect_item">
+                <image src="../../images/login_head_icon.jpg" style="width:50rpx;height:50rpx;margin-right:20rpx" />
+                <input value="{{account}}" type="number" name="account" placeholder="{{placeData}}" />
+            </view>
+            <view style="width:750rpx;height:30rpx;"></view>
+            <view class="rect_item">
+                <image src="../../images/login_ps_icon.png" style="width:50rpx;height:50rpx;margin-right:20rpx" />
+                <input value="{{password}}" type="text" name="password" placeholder="密码" placeholder-class="input-placeholder" password="{{true}}" />
+            </view>
+            <view  style="width:750rpx;height:90rpx;">
+                <view class="register" bindtap="register">注册</view>
+                <view hidden="{{type!=2}}" class="visitor_login" bindtap="visitor_login">游客登录</view>
+            </view>
+            <button class="login_bt" form-type="submit" type="primary" loading="{{loading}}" style="width:490rpx">
+                登录
+            </button>
+        </form>
+    </view>
+</view>

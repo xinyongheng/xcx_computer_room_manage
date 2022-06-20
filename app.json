@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/route/route",
+    "pages/applyEnter/applyEnter",
+    "pages/audit/audit",
+    "pages/index/index",
+    "pages/fillApplyInfo/fillApplyInfo",
+    "pages/uploadResource/uploadResource",
+    "pages/dailyInspections/dailyInspections",
+    "pages/otherDailyInspections/otherDailyInspections",
+    "pages/fillDailyInspections/fillDailyInspections",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/userinfo/userinfo"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "机房管理",
+    "navigationStyle":"custom",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "navigationStyle": "default",
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#FFDC08",
+  "navigationBarTitleText": "云资源上传",
+  "navigationBarTextStyle": "black"
+  
+}

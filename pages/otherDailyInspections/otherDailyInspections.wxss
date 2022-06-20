@@ -1,0 +1,15 @@
+/* pages/otherDailyInspections/otherDailyInspections.wxss */
+.textarea_view {
+    margin-left: 62rpx;
+    width: 666rpx;
+    box-sizing: border-box;
+    height: max-content;
+    background-color: antiquewhite;
+    border: 1rpx solid #445ACA;
+    padding: 10rpx 0rpx 10rpx 10rpx;
+}
+
+.textarea_view textarea {
+    width: 100%;
+    height: max-content;
+}

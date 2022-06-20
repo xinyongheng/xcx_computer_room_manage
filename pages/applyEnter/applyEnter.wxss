@@ -1,0 +1,175 @@
+/* pages/applyEnter/applyEnter.wxss */
+view {
+    word-break: break-all;
+}
+
+.head_bg {
+    background: -webkit-linear-gradient(top, rgb(255, 36, 37), rgb(255, 199, 199));
+    height: 260rpx;
+}
+
+.content {
+    width: 660rpx;
+    border-radius: 50rpx;
+    border: 2rpx solid rgb(255, 252, 252);
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+    margin-top: -200rpx;
+    background-color: white;
+    height: 900rpx;
+    box-shadow: 0px 2px 2px 2px gainsboro;
+}
+
+.line_view {
+    display: flex;
+    align-items: center;
+}
+
+.space_v {
+    height: 50rpx;
+    width: max-content;
+}
+
+.text {
+    width: 666rpx;
+    margin-left: 42rpx;
+    min-height: 80rpx;
+    background: #F3F4F5;
+    padding: 5rpx;
+}
+
+.text_head {
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    /* background: fixed; */
+    /* background-color: darkgray; */
+}
+
+.head {
+    border: 3rpx solid rgb(33, 173, 33);
+    border-radius: 15rpx;
+    padding: 10rpx;
+}
+
+.dialog_input {
+    width: 500rpx;
+}
+.view_text{
+    font-size: 30rpx;
+}
+.zan-dialog__mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0);
+    /*设置阴影半透明背景如： background: rgba(0, 0, 0, 0.4);*/
+    display: none;
+}
+
+.zan-dialog__container {
+    position: fixed;
+    bottom: 30%;
+    width: 650rpx;
+    /*弹窗布局宽*/
+    /* height: 510rpx; */
+    /*弹窗布局高，与下面弹出距离transform有关*/
+    margin-left: 50rpx;
+    background: #f8f8f8;
+    transform: translateY(300%);
+    /*弹框弹出距离，与弹框布局高度有关，如300%表示弹起距离为3倍弹窗高度 */
+    transition: all 0.4s ease;
+    z-index: 12;
+    border-radius: 20rpx;
+    box-shadow: 0px 3px 3px 2px gainsboro;
+    /*弹框的悬浮阴影效果，如不需要可注释该行*/
+
+    display: flex;
+    /*设置显示样式**/
+    align-items: center;
+    /* *子view垂直居中 */
+    /* vertical-align: center; *垂直居中 */
+    justify-content: center;
+    /* *内容居中 */
+    /* flex-direction:column; 子view排列方式row--水平 column--垂直 */
+}
+
+.zan-dialog--show .zan-dialog__container {
+    transform: translateY(0);
+}
+
+.zan-dialog--show .zan-dialog__mask {
+    display: block;
+}
+
+.dialog_btm {
+    /* width: 300rpx; */
+    margin-top: 10rpx;
+    background-color: rgb(33, 173, 33);
+    color: white;
+    border-radius: 30rpx;
+}
+
+.title_text {
+    color: white;
+    background-color: rgb(33, 173, 33);
+    /* padding: 5rpx; */
+}
+
+.card_view {
+    padding: 20rpx;
+    background-color: white;
+    border-radius: 30rpx;
+    border: 3rpx solid rgba(243, 244, 245, 1);
+    margin: 30rpx 42rpx 20rpx 42rpx;
+    box-shadow: 0px 3px 3px 2px gainsboro;
+
+}
+
+.btn {
+    margin-top: 60rpx;
+    background: -webkit-linear-gradient(right, rgb(68, 90, 202), rgb(68, 90, 202));
+    color: white;
+    border-radius: 50rpx;
+}
+
+.btn_add{
+    padding: 0rpx;
+    background: -webkit-linear-gradient(right, rgb(68, 90, 202), rgb(68, 90, 202));
+    width: 100rpx;
+    font-size: 30rpx;
+}
+
+
+.title_1 {
+    font-weight: bold;
+    font-size: 32rpx;
+    color: #141414;
+    margin-left: 20rpx;
+}
+textarea{
+    font-size: 32rpx;
+}
+.line_space {
+    width: 626rpx;
+    height: 2rpx;
+    background: #F3F4F5;
+    border-radius: 1rpx;
+}
+.hint_view{
+    width: 666rpx;
+    margin-left: 42rpx;
+    height: 100rpx;
+    background-color: rgba(243, 244, 245, 1);
+    margin-top: 30rpx;
+}
+scroll-view .delete_item {
+    /* display: flex; */
+    position: absolute;
+    margin-top: -150rpx;
+    /* margin-left: 500rpx; */
+    right: 60rpx;
+}

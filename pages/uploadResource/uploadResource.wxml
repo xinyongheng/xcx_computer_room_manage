@@ -1,0 +1,36 @@
+<!-- pages/uploadResource/uploadResource.wxml -->
+<view class="linear">
+    <view class="title_2">标题</view>
+    <textarea class="textarea_title" maxlength="76" bindinput="titleInput" auto-height="{{true}}" placeholder="请输入标题"></textarea>
+</view>
+<view class="space_gray"></view>
+<view style="display:flex;padding-top:30rpx;padding-bottom:30rpx">
+    <view class="title_2" style="width:140rpx;height:80rpx;line-height:80rpx;">图片</view>
+    <view class="gridview">
+        <block wx:for="{{tempFilePaths}}" wx:key="key">
+            <view class="gridview-item">
+                <image style="width:100%;height:100%" src="{{item}}" mode="aspectFit" src="{{item}}" data-index='{{index}}' bindlongpress='deleteImg' bindtap='imgClick' />
+            </view>
+        </block>
+        <view class="add_view center" bindtap='addImg'>+</view>
+    </view>
+</view>
+<view class="line"></view>
+<view class="linear" style="padding-top:10rpx;padding-bottom:30rpx">
+    <view class="title_2">上传者</view>
+    <view>
+        <input bindinput="nameInput" style="padding-top:15rpx" placeholder="请输入上传人姓名" />
+        <input bindinput="unitInput" placeholder="请输入所属单位名称" />
+        <input bindinput="departmentInput" placeholder="请输入所属部门名称" />
+    </view>
+</view>
+<view class="line"></view>
+<view class="title_2">备注</view>
+<view class="remark_view">
+    <textarea bindinput="remarkInput" style="font-size:30rpx;min-height:100rpx" auto-height="{{true}}" placeholder="输入备注"></textarea>
+</view>
+<view class="space"></view>
+<button class="upload" style="width:80%;" bindtap='upload' loading="{{loading}}">上传</button>
+<view class="space"></view>
+<view class="space"></view>
+<view class="space"></view>

@@ -1,0 +1,141 @@
+/* pages/dailyInspections/dailyInspections.wxss */
+.head_bg {
+    background: -webkit-linear-gradient(top, rgb(255, 36, 37), rgb(255, 199, 199));
+    height: 260rpx;
+}
+
+.content {
+    border-radius: 50rpx;
+    border: 2rpx solid rgb(255, 252, 252);
+    margin-left: 50rpx;
+    margin-right: 50rpx;
+    margin-top: -200rpx;
+    background-color: white;
+    height: 900rpx;
+    box-shadow: 0px 2px 2px 2px gainsboro;
+}
+
+.c_head {
+    display: flex;
+}
+
+.c_title {
+    flex: 1;
+    height: 150rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    /* border: 3rpx,solid,rgb(234, 99, 99); */
+    border-radius: 10rpx;
+}
+
+.c_title .title {
+    /* color: rgb(255, 36, 37); */
+    font-size: 40rpx;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title_line {
+    margin-top: 20rpx;
+    border-radius: 5rpx;
+    width: 50rpx;
+    height: 10rpx;
+    background-color: rgb(255, 36, 37);
+}
+
+.title_line_space {
+    margin-top: 20rpx;
+    border-radius: 5rpx;
+    width: 50rpx;
+    height: 10rpx;
+    /* background-color: blue; */
+}
+
+.linear .key {
+    padding-left: 20rpx;
+    width: 150rpx;
+}
+
+.people_bt {
+    background-color: rgb(64, 210, 149);
+    font-size: 25rpx;
+    padding: 10rpx;
+    color: white;
+    left: -250rpx;
+    margin-top: 10rpx;
+}
+
+.img_bt {
+    background-color: rgb(64, 210, 149);
+    font-size: 25rpx;
+    padding: 10rpx;
+    color: white;
+}
+
+scroll-view {
+    height: 730rpx;
+}
+
+.line {
+    display: flex;
+    flex: 1;
+}
+
+.num {
+    font-size: 30rpx;
+    display: flex;
+    width: auto;
+    width: 50rpx;
+    height: 50rpx;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 60rpx;
+    color: rgb(24, 193, 24);
+    border: 2rpx solid rgb(64, 210, 149);
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+}
+
+scroll-view .delete_item {
+    /* display: flex; */
+    position: absolute;
+    margin-top: -100rpx;
+    /* margin-left: 500rpx; */
+    right: 30rpx;
+}
+
+.submit_btn {
+    margin-top: 70rpx;
+    background: -webkit-linear-gradient(right, rgb(255, 36, 37), rgb(234, 99, 99));
+    color: white;
+    border-radius: 50rpx;
+}
+
+.addTag {
+    width: 30%;
+    height: 115rpx;
+    /* box-sizing:border-box; */
+    font-size: 60rpx;
+    background-color: #f0ffff;
+    border-radius: 10rpx;
+    border: 6rpx dashed #a7a8a8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea {
+    width: 610rpx;
+    margin-left: 5rpx;
+    margin-top: 5rpx;
+    border: 3rpx solid rgb(10, 65, 230);
+    line-height: 30rpx;
+}

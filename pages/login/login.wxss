@@ -1,0 +1,51 @@
+/* pages/login/login.wxss */
+.rect_item{
+    border: 1px solid rgb(167, 190, 222);
+    border-radius: 90rpx;
+    margin-left: 130rpx;
+    margin-right: 130rpx;
+    display: flex;
+    align-items: center;
+    /* 上开始和Android不一样 */
+    padding: 20rpx 20rpx 20rpx 30rpx;
+    background-color: rgb(240, 247, 255);
+}
+.login_bt{
+    margin-left: 130rpx;
+    border-radius: 60rpx;
+    color: white;
+    font-weight: 100;
+    padding-top: 30rpx;
+    padding-bottom: 30rpx;
+    font-size: 30rpx;
+    background: -webkit-linear-gradient(left,rgb(84,186,255),rgb(48,113,255));
+}
+.back_view{
+    width: 100rpx;
+    height: 50rpx;
+    position: absolute;
+    left: 10rpx;
+    top: 65rpx;
+}
+.visitor_login{
+    text-align: right;
+    font-size: 28rpx;
+    color: rgb(48,113,255);
+    right: 142rpx;
+    margin-top: 30rpx;
+    width: max-content;
+    /* background-color: red; */
+    position: absolute;
+    text-decoration:underline;
+}
+.register{
+    font-size: 28rpx;
+    color: rgb(48,113,255);
+    left: 142rpx;
+    margin-top: 30rpx;
+    width: max-content;
+    padding-right: 20rpx;
+    /* background-color: red; */
+    position: absolute;
+    text-decoration:underline;
+}
