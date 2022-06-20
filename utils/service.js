@@ -1,7 +1,7 @@
 // const parentUrl = 'http://192.168.43.157:81'
 // const parentUrl = 'http://192.168.5.117:81'
 // const parentUrl = 'http://192.168.1.18:81'
-const parentUrl = 'http://124.222.125.236:8249'
+const parentUrl = 'https://124.222.125.236:8249'
 const { isEmpty } = require("./util");
 const viewUtils = require("./view_utils")
 const Token_Name = require("./storage").Token_Name;
