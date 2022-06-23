@@ -1,5 +1,6 @@
 const service = require("../../utils/service");
 const { isEmpty } = require("../../utils/util");
+const view_utils = require("../../utils/view_utils");
 
 // pages/userinfo/userinfo.js
 Page({
@@ -17,12 +18,19 @@ Page({
         wx.request({
             url: service.parentUrl + '/unlogin',
             data: {},
-            header: { 'content-type': 'application/json' },
+            header: service.addToken({ 'content-type': 'application/json' }),
             method: 'GET',
             dataType: 'json',
             responseType: 'text',
             success: (result) => {
-
+                if (!service.checkIntercept(result.data)) {
+                    view_utils.showModal('退出成功');
+                    setTimeout(() => {
+                        wx.navigateBack({
+                            delta: 1
+                        });
+                    }, 1000)
+                }
             },
             fail: () => { },
             complete: () => { }

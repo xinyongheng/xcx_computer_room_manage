@@ -123,6 +123,8 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        //750 1334
+        //375 667
         const sv = require("../../utils/service").addToken({});
         console.log('token', sv);
         let type = options.type;
